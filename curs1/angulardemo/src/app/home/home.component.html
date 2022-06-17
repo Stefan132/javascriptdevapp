@@ -1,0 +1,51 @@
+<h1>{{ title }}</h1>
+<h3>{{ salut }}</h3>
+
+
+<p>home works!</p>
+<p>Lorem ipsum dolor sit amet, consectet</p>
+
+<ul>
+    <li>{{ user.id }}</li>
+    <li>{{ user.nume}}</li>
+    <li>{{ user.prenume}}</li>
+</ul>
+
+{{ image }}
+<img [src]="image" alt="poza">
+<img *ngIf = "showImage" src="{{image}}" alt="{{ user.nume }}">
+
+<button (click) = 'afiseazaImagine()'> Afiseaza/Ascunde Imagine</button>
+
+
+<h2> Transfer informatii bidirectional</h2>
+
+<input type="text" [(ngModel)]="nume">
+
+{{ nume }}
+
+<br> <br>
+{{ eroi[2].name }}
+<br> <br>
+{{ eroi[3].name }}
+<br> <br>
+{{ eroi[4].name }}
+<br> <br>
+{{ eroi[1].name }}
+<br> <br>
+{{ eroi[0].name }}
+<br> <br>
+
+<div>
+    <div *ngFor= "let erou of eroi">
+        <p *ngIf = "erou.id <= 3">{{erou.id}} - {{erou.name}}</p>
+    </div>
+
+</div>
+
+<ul>
+    <li *ngFor= "let erou of eroi">
+        <span *ngIf = "erou.id >= 3">{{erou.id}} - {{erou.name}}</span>
+    </li>
+    
+</ul>
